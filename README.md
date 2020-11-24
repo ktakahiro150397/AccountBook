@@ -57,11 +57,11 @@
 変数  
 |変数名|意味合い|単位|
 |:---:|:---|:---:|
-|Nf|個人Nの月初め入金額|円|
-|KS|家庭分口座の合計支出|円|
-|Np|個人Nの負担割合|%|
-|Ni|個人Nが家庭分から出した個人分|円|
-|Nk|個人Nが個人分から出した家庭分|円|
+|<img src="https://latex.codecogs.com/gif.latex?N_{f}">|個人Nの月初め入金額|円|
+|<img src="https://latex.codecogs.com/gif.latex?K_{S}">|家庭分口座の合計支出|円|
+|<img src="https://latex.codecogs.com/gif.latex?N_{p}">|個人Nの負担割合|%|
+|<img src="https://latex.codecogs.com/gif.latex?N_{i}">|個人Nが家庭分から出した個人分|円|
+|<img src="https://latex.codecogs.com/gif.latex?N_{k}">|個人Nが個人分から出した家庭分|円|
 
 この時、調整時に計算する個人Nの当月負担額は以下のように計算する。  
 正の値の場合、その値の額を追加で納める必要がある。
