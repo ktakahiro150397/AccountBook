@@ -1,4 +1,4 @@
-# CostBurdenEqualizer
+# AccountBook
 
 ## 機能概要
 
