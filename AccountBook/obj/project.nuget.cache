@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6/U8wEqWxp8TXpl06tgYOlUloHtjfUz0wTmbsslYgqAvOZaA78ZXIOmHSh2TpAR+8Eynt4YvrlVtWCMIAs55Rw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\koike.LOGIC\\Source\\Repos\\ktakahiro150397\\AccountBook\\AccountBook\\AccountBook.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\koike.LOGIC\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}
