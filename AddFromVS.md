@@ -1,0 +1,3 @@
+# このファイルはVisualStudio2019から追加
+
+vslocalBranchを使用
