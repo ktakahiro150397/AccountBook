@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LziD1CCzGHjBmjfsqATkMgsgIktb1yhiyGnvG+G96U9yrtjADGK0YbxhB/aw/CiEJwTH0eN9pGl/uJkgx+Mbww==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Takahiro\\source\\repos\\ktakahiro150397\\AccountBook\\AccountBook\\AccountBook.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Takahiro\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}
