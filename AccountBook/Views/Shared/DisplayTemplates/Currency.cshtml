@@ -1,0 +1,11 @@
+﻿@model System.Int32
+
+@String.Format("{0:#,##0}円", Model);
+
+
+@*DisplayForメソッドのテンプレート
+呼び出し順序
+1,DisplayForメソッドの第二引数.cshtml
+2.プロパティのUIHint属性.cshtml
+3.プロパティのDataType属性.cshtml
+4.プロパティの型名.cshtml*@
