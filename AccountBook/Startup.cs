@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AccountBook.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AccountBook
 {
@@ -24,6 +26,13 @@ namespace AccountBook
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //接続文字列とコンテキストクラスを紐付ける
+            services.AddDbContext<MyContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("MyContext")
+                )
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,10 +55,16 @@ namespace AccountBook
 
             app.UseAuthorization();
 
+            //endpoints:IEndpointRouteBuilder
+            //MapControllerRouteメソッドで新たにルートを追加できる
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
+                    //controllerとactionは組み込み済みのプレースホルダー
+                    // "?"は省略可能なパラメータ
+                    //イコールで名称を指定すると、その既定値を設定できる
+                    //"~/Hello"にアクセスすると、actionは規定のindexが適用され、アクセスできる
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }

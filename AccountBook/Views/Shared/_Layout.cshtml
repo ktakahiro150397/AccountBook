@@ -31,6 +31,7 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            @* RenderBodyは各ページのビューが表示される *@
             @RenderBody()
         </main>
     </div>
@@ -43,6 +44,9 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    @* RenderSectionは各ページでコンテンツを任意に渡せる
+        @sectionブロックで渡す
+        *@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
