@@ -30,7 +30,7 @@ namespace AccountBook
             //接続文字列とコンテキストクラスを紐付ける
             services.AddDbContext<MyContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("MyContext")
+                    Configuration.GetConnectionString(nameof(MyContext))
                 )
             );
         }
@@ -65,7 +65,13 @@ namespace AccountBook
                     // "?"は省略可能なパラメータ
                     //イコールで名称を指定すると、その既定値を設定できる
                     //"~/Hello"にアクセスすると、actionは規定のindexが適用され、アクセスできる
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+               );
+                endpoints.MapControllerRoute(
+                    name: "List",
+                    pattern: "{controller=List}/{action=Index}/{id?}"
+                    );
+
             });
         }
     }

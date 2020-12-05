@@ -4,14 +4,16 @@ using AccountBook.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AccountBook.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20201205040329_FixRelation")]
+    partial class FixRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,9 +107,6 @@ namespace AccountBook.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ItemName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -134,8 +133,6 @@ namespace AccountBook.Migrations
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
 
                     b.HasIndex("PaymentHeaderId");
 
@@ -269,10 +266,6 @@ namespace AccountBook.Migrations
 
             modelBuilder.Entity("AccountBook.Models.PaymentDetail", b =>
                 {
-                    b.HasOne("AccountBook.Models.CategoryMaster", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId");
-
                     b.HasOne("AccountBook.Models.PaymentHeader", "PaymentHeader")
                         .WithMany("PaymentDetails")
                         .HasForeignKey("PaymentHeaderId");
@@ -284,8 +277,6 @@ namespace AccountBook.Migrations
                     b.HasOne("AccountBook.Models.TaxMaster", "TaxType")
                         .WithMany()
                         .HasForeignKey("TaxTypeId");
-
-                    b.Navigation("Category");
 
                     b.Navigation("PaymentHeader");
 

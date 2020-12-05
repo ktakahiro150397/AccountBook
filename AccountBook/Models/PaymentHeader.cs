@@ -63,12 +63,12 @@ namespace AccountBook.Models
         /// </summary>
         [Required]
         [DisplayName("入力者")]
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
         /// <summary>
         /// この明細に登録されている購入項目の一覧。
         /// </summary>
         [Required]
-        public List<PaymentDetail> PaymentDetails { get; set; }
+        public virtual ICollection<PaymentDetail> PaymentDetails { get; set; }
     }
 }

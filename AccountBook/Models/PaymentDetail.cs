@@ -16,8 +16,15 @@ namespace AccountBook.Models
         /// 支出種別
         /// </summary>
         [Required]
-        public PaymentTypeMaster PaymentType { get; set; }
+        public virtual PaymentTypeMaster PaymentType { get; set; }
+
+        /// <summary>
+        /// カテゴリ
+        /// </summary>
+        [Required]
+        public virtual CategoryMaster Category { get; set; }
         
+
         /// <summary>
         /// この項目の合計金額
         /// </summary>
@@ -51,7 +58,12 @@ namespace AccountBook.Models
         /// この項目に設定する税区分。
         /// </summary>
         [Required]
-        public TaxMaster TaxType { get; set; }
+        public virtual TaxMaster TaxType { get; set; }
+
+        /// <summary>
+        /// ヘッダーとのリレーション
+        /// </summary>
+        public virtual PaymentHeader PaymentHeader { get; set; }
 
 
     }

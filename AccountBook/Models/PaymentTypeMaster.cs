@@ -30,17 +30,17 @@ namespace AccountBook.Models
         [Required]
         public bool IsCategoryChangable { get; set; }
 
-        /// <summary>
-        /// 既定で選択されているカテゴリの項目。
-        /// </summary>
-        [Required]
-        public CategoryMaster DefaultCategory { get; set; }
+        ///// <summary>
+        ///// 既定で選択されているカテゴリの項目。
+        ///// </summary>
+        //[Required]
+        //public CategoryMaster DefaultCategory { get; set; }
 
         /// <summary>
         /// この支出種別に属するカテゴリの項目。
         /// </summary>
         [Required]
-        public List<CategoryMaster> Category { get; set; }
+        public virtual ICollection<CategoryMaster> Category { get; set; }
 
         /// <summary>
         /// この支出種別が属するグループ。
@@ -48,47 +48,49 @@ namespace AccountBook.Models
         [Required]
         public PaymentTypeGroup Group { get; set; }
 
+        /// <summary>
+        /// 支出タイプの値を表します。
+        /// </summary>
+        public enum PaymentTypeValue
+        {
+            /// <summary>
+            /// 家庭支出。
+            /// </summary>
+            Family,
+
+            /// <summary>
+            /// 固定支出。
+            /// </summary>
+            Fixed,
+
+            /// <summary>
+            /// 個人支出。
+            /// </summary>
+            Individual,
+
+            /// <summary>
+            /// 控除。
+            /// </summary>
+            Deduction,
+
+            /// <summary>
+            /// 持ち出し。
+            /// </summary>
+            Debt
+        }
+
+        /// <summary>
+        /// 支出種別のグループを表します。
+        /// </summary>
+        public enum PaymentTypeGroup
+        {
+            FamilyGroup,
+            IndividualGroup,
+            DeductionGroup,
+            DebtGroup
+        }
+
     }
 
-    /// <summary>
-    /// 支出タイプの値を表します。
-    /// </summary>
-    public enum PaymentTypeValue
-    {
-        /// <summary>
-        /// 家庭支出。
-        /// </summary>
-        Family,
-
-        /// <summary>
-        /// 固定支出。
-        /// </summary>
-        Fixed,
-
-        /// <summary>
-        /// 個人支出。
-        /// </summary>
-        Individual,
-
-        /// <summary>
-        /// 控除。
-        /// </summary>
-        Deduction,
-
-        /// <summary>
-        /// 持ち出し。
-        /// </summary>
-        Debt
-    }
-
-    /// <summary>
-    /// 支出種別のグループを表します。
-    /// </summary>
-    public enum PaymentTypeGroup
-    {
-        FamilyGroup,
-        IndividualGroup,
-        DeductionGroup,
-        DebtGroup
-    }
+    
 }

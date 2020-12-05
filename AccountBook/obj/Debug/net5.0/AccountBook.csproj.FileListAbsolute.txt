@@ -172,3 +172,8 @@ C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug
 C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\Books\Index.cshtml.g.cs
 C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\Shared\DisplayTemplates\Currency.cshtml.g.cs
 C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\Shared\Components\List\Default.cshtml.g.cs
+C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\List\Create.cshtml.g.cs
+C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\List\Delete.cshtml.g.cs
+C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\List\Details.cshtml.g.cs
+C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\List\Edit.cshtml.g.cs
+C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\List\Index.cshtml.g.cs

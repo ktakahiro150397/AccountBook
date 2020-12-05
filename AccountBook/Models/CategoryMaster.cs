@@ -17,7 +17,7 @@ namespace AccountBook.Models
         [Required]
         public string CategoryName { get; set; }
         
-        
+        public virtual PaymentTypeMaster PaymentTypeMaster { get; set; }
 
     }
 }
