@@ -16,8 +16,15 @@ namespace AccountBook.Models
         /// </summary>
         [Required]
         public string CategoryName { get; set; }
+
+        /// <summary>
+        /// カテゴリの値。
+        /// </summary>
+        [Required]
+        public int CategoryValue { get; set; }
         
         public virtual PaymentTypeMaster PaymentTypeMaster { get; set; }
 
+    
     }
 }

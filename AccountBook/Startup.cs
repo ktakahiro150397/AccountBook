@@ -64,17 +64,10 @@ namespace AccountBook
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    //controllerとactionは組み込み済みのプレースホルダー
-                    // "?"は省略可能なパラメータ
-                    //イコールで名称を指定すると、その既定値を設定できる
-                    //"~/Hello"にアクセスすると、actionは規定のindexが適用され、アクセスできる
-                    pattern: "{controller=Home}/{action=Index}/{id?}"
-               );
-                endpoints.MapControllerRoute(
-                    name: "List",
-                    pattern: "{controller=List}/{action=Index}/{id?}"
-                    );
+                   name: "List",
+                   pattern: "{controller=List}/{action=Index}/{id?}"
+                   );
+               
 
             });
         }
