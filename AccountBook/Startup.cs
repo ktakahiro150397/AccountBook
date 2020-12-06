@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AccountBook.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 
 namespace AccountBook
 {
@@ -33,6 +34,9 @@ namespace AccountBook
                     Configuration.GetConnectionString(nameof(MyContext))
                 )
             );
+
+            //デバッグ時、更新して変更を反映する
+            services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

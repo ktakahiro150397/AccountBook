@@ -10,7 +10,7 @@ namespace AccountBook.Models
     public class AttachmentFile
     {
 
-        public int Id { get; set; }
+        public int AttachmentFileId { get; set; }
 
         /// <summary>
         /// この添付ファイルの1から始まる連番。

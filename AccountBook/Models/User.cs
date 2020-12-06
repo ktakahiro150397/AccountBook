@@ -10,7 +10,7 @@ namespace AccountBook.Models
     public class User
     {
 
-        public int Id { get; set; }
+        public int UserId { get; set; }
 
         /// <summary>
         /// この明細の名称。

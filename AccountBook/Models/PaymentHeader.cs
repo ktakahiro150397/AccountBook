@@ -13,7 +13,7 @@ namespace AccountBook.Models
     /// </summary>
     public class PaymentHeader
     {
-        public int Id { get; set; }
+        public int PaymentHeaderId { get; set; }
 
         /// <summary>
         /// この明細の名称。

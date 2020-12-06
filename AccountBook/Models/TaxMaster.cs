@@ -8,7 +8,7 @@ namespace AccountBook.Models
 {
     public class TaxMaster
     {
-        public int Id { get; set; }
+        public int TaxMasterId { get; set; }
 
         /// <summary>
         /// この税項目の名前。

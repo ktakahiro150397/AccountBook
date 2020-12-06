@@ -9,7 +9,7 @@ namespace AccountBook.Models
 {
     public class CategoryMaster
     {
-        public int Id { get; set; }
+        public int CategoryMasterId { get; set; }
 
         /// <summary>
         /// カテゴリ名称。

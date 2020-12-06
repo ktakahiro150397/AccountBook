@@ -21,7 +21,7 @@ namespace AccountBook.Migrations
 
             modelBuilder.Entity("AccountBook.Models.AttachmentFile", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("AttachmentFileId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
@@ -44,42 +44,16 @@ namespace AccountBook.Migrations
                     b.Property<int>("Seq")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("AttachmentFileId");
 
                     b.HasIndex("PaymentHeaderId");
 
                     b.ToTable("attachmentFiles");
                 });
 
-            modelBuilder.Entity("AccountBook.Models.Book", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Publisher")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<bool>("Sample")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Book");
-                });
-
             modelBuilder.Entity("AccountBook.Models.CategoryMaster", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CategoryMasterId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
@@ -91,7 +65,7 @@ namespace AccountBook.Migrations
                     b.Property<int?>("PaymentTypeMasterId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("CategoryMasterId");
 
                     b.HasIndex("PaymentTypeMasterId");
 
@@ -100,12 +74,12 @@ namespace AccountBook.Migrations
 
             modelBuilder.Entity("AccountBook.Models.PaymentDetail", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("PaymentDetailId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("CategoryId")
+                    b.Property<int?>("CategoryMasterId")
                         .HasColumnType("int");
 
                     b.Property<string>("ItemName")
@@ -121,10 +95,10 @@ namespace AccountBook.Migrations
                     b.Property<int?>("PaymentHeaderId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PaymentTypeId")
+                    b.Property<int?>("PaymentTypeMasterId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TaxTypeId")
+                    b.Property<int?>("TaxTypeTaxMasterId")
                         .HasColumnType("int");
 
                     b.Property<int>("UnitCount")
@@ -133,22 +107,22 @@ namespace AccountBook.Migrations
                     b.Property<long>("UnitPrice")
                         .HasColumnType("bigint");
 
-                    b.HasKey("Id");
+                    b.HasKey("PaymentDetailId");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("CategoryMasterId");
 
                     b.HasIndex("PaymentHeaderId");
 
-                    b.HasIndex("PaymentTypeId");
+                    b.HasIndex("PaymentTypeMasterId");
 
-                    b.HasIndex("TaxTypeId");
+                    b.HasIndex("TaxTypeTaxMasterId");
 
                     b.ToTable("paymentDetails");
                 });
 
             modelBuilder.Entity("AccountBook.Models.PaymentHeader", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("PaymentHeaderId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
@@ -178,7 +152,7 @@ namespace AccountBook.Migrations
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("PaymentHeaderId");
 
                     b.HasIndex("UserId");
 
@@ -187,7 +161,7 @@ namespace AccountBook.Migrations
 
             modelBuilder.Entity("AccountBook.Models.PaymentTypeMaster", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("PaymentTypeMasterId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
@@ -205,14 +179,14 @@ namespace AccountBook.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("PaymentTypeMasterId");
 
                     b.ToTable("paymentTypeMasters");
                 });
 
             modelBuilder.Entity("AccountBook.Models.TaxMaster", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("TaxMasterId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
@@ -224,14 +198,14 @@ namespace AccountBook.Migrations
                     b.Property<int>("TaxRate")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("TaxMasterId");
 
                     b.ToTable("taxMasters");
                 });
 
             modelBuilder.Entity("AccountBook.Models.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
@@ -246,7 +220,7 @@ namespace AccountBook.Migrations
                     b.Property<byte[]>("ProfilePicture")
                         .HasColumnType("varbinary(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("UserId");
 
                     b.ToTable("users");
                 });
@@ -271,7 +245,7 @@ namespace AccountBook.Migrations
                 {
                     b.HasOne("AccountBook.Models.CategoryMaster", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryMasterId");
 
                     b.HasOne("AccountBook.Models.PaymentHeader", "PaymentHeader")
                         .WithMany("PaymentDetails")
@@ -279,11 +253,11 @@ namespace AccountBook.Migrations
 
                     b.HasOne("AccountBook.Models.PaymentTypeMaster", "PaymentType")
                         .WithMany()
-                        .HasForeignKey("PaymentTypeId");
+                        .HasForeignKey("PaymentTypeMasterId");
 
                     b.HasOne("AccountBook.Models.TaxMaster", "TaxType")
                         .WithMany()
-                        .HasForeignKey("TaxTypeId");
+                        .HasForeignKey("TaxTypeTaxMasterId");
 
                     b.Navigation("Category");
 

@@ -10,7 +10,7 @@ namespace AccountBook.Models
     public class PaymentDetail
     {
 
-        public int Id { get; set; }
+        public int PaymentDetailId { get; set; }
 
         /// <summary>
         /// 支出種別

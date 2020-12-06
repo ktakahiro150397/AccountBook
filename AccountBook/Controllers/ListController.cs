@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AccountBook.Models;
@@ -37,7 +36,7 @@ namespace AccountBook.Controllers
             }
 
             var paymentHeader = await _context.paymentHeaders
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.PaymentHeaderId == id);
             if (paymentHeader == null)
             {
                 return NotFound();
@@ -91,7 +90,7 @@ namespace AccountBook.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,PaymentName,PaymentMonth,ActuialPaymentMonth,DataCreatedDate,DataUpdateDate,Memo,MoneyAmount")] PaymentHeader paymentHeader)
         {
-            if (id != paymentHeader.Id)
+            if (id != paymentHeader.PaymentHeaderId)
             {
                 return NotFound();
             }
@@ -105,7 +104,7 @@ namespace AccountBook.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PaymentHeaderExists(paymentHeader.Id))
+                    if (!PaymentHeaderExists(paymentHeader.PaymentHeaderId))
                     {
                         return NotFound();
                     }
@@ -128,7 +127,7 @@ namespace AccountBook.Controllers
             }
 
             var paymentHeader = await _context.paymentHeaders
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.PaymentHeaderId == id);
             if (paymentHeader == null)
             {
                 return NotFound();
@@ -150,7 +149,7 @@ namespace AccountBook.Controllers
 
         private bool PaymentHeaderExists(int id)
         {
-            return _context.paymentHeaders.Any(e => e.Id == id);
+            return _context.paymentHeaders.Any(e => e.PaymentHeaderId == id);
         }
     }
 }

@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "azkg3MnrcGcq1skrP08glY2bWgnz0tmroT5OY/tBDz4+j6tQcGSqHpdCccDmm6HiVq0E+orNr024xZySDXjmdg==",
+  "dgSpecHash": "sPemMt+1yka5XB5vJW6o97KwFG0AgkkmjwhfDzrz+VFBVHM9QXaP1tFYW7zdLQ+HiE/PDYe/Zx5K9DJmlSbTIA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Takahiro\\source\\repos\\ktakahiro150397\\AccountBook\\AccountBook\\AccountBook.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Takahiro\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Takahiro\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Takahiro\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.0\\microsoft.aspnetcore.mvc.razor.extensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Takahiro\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\5.0.0\\microsoft.aspnetcore.mvc.razor.runtimecompilation.5.0.0.nupkg.sha512",
     "C:\\Users\\Takahiro\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Takahiro\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
     "C:\\Users\\Takahiro\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
