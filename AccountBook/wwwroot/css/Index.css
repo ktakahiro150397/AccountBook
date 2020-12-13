@@ -1,0 +1,80 @@
+﻿/*検索フォーム設定*/
+.search-form {
+    height: 40px;
+}
+    /*検索フォーム中のテキストボックスの基本設定*/
+    .search-form input[type=text] {
+        width: 90%;
+        height: 100%;
+        border-radius: 5px;
+        transition-duration: 0.2s;
+        padding: 0px;
+        border: 1px solid #555555;
+        box-sizing: border-box;
+        /*アイコンのサイズ分だけ入力域を寄せる*/
+        padding-left: 40px;
+    }
+
+/*検索フォーム中のテキストボックス*/
+.search-text {
+    display: inline-block;
+    width: 90%;
+    height: 100%;
+    position: relative;
+    right: 30px;
+}
+
+/*検索ボタン(左)*/
+.search-button {
+    display: inline-block;
+    height: 80%;
+    width: 32px;
+    box-sizing: border-box;
+    border: none;
+    transition: .2s;
+    /*アイコン*/
+    background-image: url("../icons/search-lens-icon.png");
+    background-repeat: no-repeat;
+    background-position: 50% center;
+    background-size: 55%;
+    /*背景*/
+    border-radius: 50%;
+    position: relative;
+    top: 9px;
+    left: 40px;
+    z-index: 99;
+}
+
+    .search-button:focus, .search-button:hover, .search-condition-toggle-collapse:focus, .search-condition-toggle-collapse:hover {
+        /*ホバー時に背景色を変更する*/
+        background-color: #808080;
+    }
+
+/*詳細検索ボタン(右)*/
+/*.search-condition-toggle-collapse {
+            display: inline-block;
+            height: 80%;
+            width: 32px;
+            position: relative;
+            box-sizing: border-box;
+            border: none;
+            transition: .2s;
+            border: none;*/
+/*アイコン*/
+/*background-image: url("./icons/search-detail-icon.png");
+            background-repeat: no-repeat;
+            background-position: 50% center;
+            background-size: 55%;*/
+/*背景*/
+/*border-radius: 50%;
+            position: relative;
+            top: 9px;
+            left: 750px;
+            z-index: 99;
+        }*/
+
+
+
+.list{
+    margin-top:20px;
+}

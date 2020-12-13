@@ -1,7 +1,11 @@
 ﻿@model IEnumerable<AccountBook.Models.PaymentHeader>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "明細一覧";
+}
+
+@section CSS{ 
+    <link rel="stylesheet" href="~/css/Index.css" />
 }
 
 <h1>明細一覧</h1>
@@ -10,83 +14,80 @@
     <a class="btn btn-primary" asp-action="Create">新しく明細を作成する</a>
 </p>
 
-@*検索条件の入力項目*@
+
 <div>
-    <p>明細の検索</p>
-    <table class="table">
-        <tr>
-            <th>
-                明細名
-            </th>
-            <td>
-                <input type="text" placeholder="明細名を入力してください..." />
-            </td>
-        </tr>
-        <tr>
-            <th>
-                金額
-            </th>
-            <td>
-                <input type="number" />
-                <span>円以上</span>
-                <input type="number" />
-                <span>円以下</span>
-            </td>
-        </tr>
-    </table>
-    <a class="btn btn-primary" asp-action="List">入力条件で検索する</a>
+
+    @*検索*@
+    @using (Html.BeginForm("Search", "List", FormMethod.Post))
+    {
+        <div class="search-form">
+            <div class="search-text">
+                <button type="submit" class="search-button" asp-action="Search"></button>
+                @*<button type="button" class="search-condition-toggle-collapse"></button>*@
+                @Html.TextBox("searchString", "", new { placeholder = "明細名または購入項目名で検索" })
+            </div>
+        </div>
+
+        <!--<div class="search-Form-Detail" style="height:300px;background-color:red;">-->
+        @*詳細検索の入力欄*@
+        <!--</div>-->
+    }
+
+    <div class="list">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.User.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentMonth)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Memo)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.PaymentHeaderId">
+                                @Html.DisplayFor(modelItem => item.PaymentName)
+                            </a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MoneyAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PaymentMonth)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Memo)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+
+    @section Scripts{
+
+        @*明細の検索フォームを構成する*@
+        <script src="~/js/components/PaymentSearchForm.js"></script>
+
+    }
+
 </div>
-
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PaymentName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MoneyAmount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PaymentMonth)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Memo)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.PaymentHeaderId">
-                        @Html.DisplayFor(modelItem => item.PaymentName)
-                    </a>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MoneyAmount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PaymentMonth)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Memo)
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-@section Scripts{ 
-
-@*明細の検索フォームを構成する*@
-<script src="~/js/components/PaymentSearchForm.js"></script>
-
-}

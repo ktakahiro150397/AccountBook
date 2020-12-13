@@ -26,8 +26,15 @@ using AccountBook.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\Views\_ViewImports.cshtml"
+using AccountBook.Helpers;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"38e243af9383f1eef60ac4416669a2ae2c6aad7d", @"/Views/Shared/DisplayTemplates/Currency.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"747e0a001fd14685121f0bbebdbefce9fdd3d47e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dd4c999950acb61262cfbdebfb5f4b040235c06f", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_DisplayTemplates_Currency : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<System.Int32>
     {
         #pragma warning disable 1998

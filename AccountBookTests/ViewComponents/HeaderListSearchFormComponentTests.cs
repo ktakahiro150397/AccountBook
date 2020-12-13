@@ -174,6 +174,7 @@ namespace AccountBook.ViewComponents.Tests
 
             var result = testInstance.SearchPaymentDataAsync(myContext, sCondition).Result.ToList();
 
+            var ans = result.Select(elem => elem.PaymentName).Any(elem => elem.Contains("test"));
 
             Assert.IsTrue(
                 result

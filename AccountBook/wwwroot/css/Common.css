@@ -1,0 +1,6 @@
+﻿/*グローバル要素*/
+/*フォーカス時の色*/
+input[type=text]:focus {
+    border: 1px solid #00FF00;
+    outline: 0;
+}

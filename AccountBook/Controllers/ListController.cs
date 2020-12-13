@@ -15,6 +15,18 @@ namespace AccountBook.Controllers
 
         private readonly MyContext _context;
 
+        /// <summary>
+        /// 必要な項目をインクルードした一覧表示用のデータ。
+        /// </summary>
+        private Task<List<PaymentHeader>> paymentHeadersAsync
+        {
+            get
+            {
+                return _context.paymentHeaders.Include(elem => elem.User).ToListAsync();            
+            }
+        }
+         
+
         public ListController(MyContext context)
         {
             _context = context;
@@ -24,25 +36,26 @@ namespace AccountBook.Controllers
         // GET: PaymentHeaders
         public async Task<IActionResult> Index()
         {
-            return View(await _context.paymentHeaders.ToListAsync());
+            return View(await paymentHeadersAsync);
         }
 
-        // GET: PaymentHeaders/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var paymentHeader = await _context.paymentHeaders
-                .FirstOrDefaultAsync(m => m.PaymentHeaderId == id);
-            if (paymentHeader == null)
+            //コンテキストから、その情報を取得する
+            var data = _context.paymentHeaders.Where(elem => elem.PaymentHeaderId == id)
+                .Include(elem => elem.PaymentDetails).FirstOrDefault();
+
+            if (data == null)
             {
                 return NotFound();
             }
 
-            return View(paymentHeader);
+            return View(data);
         }
 
         // GET: PaymentHeaders/Create
@@ -151,5 +164,17 @@ namespace AccountBook.Controllers
         {
             return _context.paymentHeaders.Any(e => e.PaymentHeaderId == id);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Search(string searchString)
+        {
+
+            var result = await _context.paymentHeaders.Where(elem => elem.PaymentName.Contains(searchString)).ToListAsync();
+
+            return View("Index", result);
+        }
+
+
+
     }
 }

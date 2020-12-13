@@ -23,8 +23,6 @@ C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug
 C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\AccountBook.TagHelpers.input.cache
 C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\AccountBook.TagHelpers.output.cache
 C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\AccountBook.RazorCoreGenerate.cache
-C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -453,3 +451,11 @@ C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\bin\Debug
 C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\AccountBook.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\bin\Debug\net5.0\System.Web.Mvc.dll
+C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\bin\Debug\net5.0\System.Web.Razor.dll
+C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\bin\Debug\net5.0\System.Web.Helpers.dll
+C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\bin\Debug\net5.0\System.Web.WebPages.Deployment.dll
+C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\bin\Debug\net5.0\System.Web.WebPages.Razor.dll
+C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\bin\Debug\net5.0\System.Web.WebPages.dll
+C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\bin\Debug\net5.0\Microsoft.Web.Infrastructure.dll
+C:\Users\Takahiro\source\repos\ktakahiro150397\AccountBook\AccountBook\obj\Debug\net5.0\Razor\Views\List\Details.cshtml.g.cs
