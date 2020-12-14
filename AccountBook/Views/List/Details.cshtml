@@ -1,0 +1,121 @@
+﻿@model AccountBook.Models.PaymentHeader
+
+@{
+    ViewData["Title"] = "詳細 - " + Model.PaymentName;
+}
+
+
+@section CSS{
+    <link rel="stylesheet" href="~/css/Detail.css" />
+}
+
+<h1>詳細 - @Model.PaymentName</h1>
+
+<h2>明細情報</h2>
+
+<div>
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.User.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentMonth)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Memo)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.PaymentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.PaymentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.User.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.PaymentMonth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Memo)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>購入項目一覧</h2>
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentDetails.First().PaymentType)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentDetails.First().ItemName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentDetails.First().UnitPrice)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentDetails.First().UnitCount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentDetails.First().TaxType)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentDetails.First().MoneyAmount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentDetails.First().Memo)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var detail in Model.PaymentDetails)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => detail.PaymentType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => detail.ItemName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => detail.UnitPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => detail.UnitCount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => detail.TaxType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => detail.MoneyAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => detail.Memo)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

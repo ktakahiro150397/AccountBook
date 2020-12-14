@@ -1,0 +1,5 @@
+# デバッグ時に生成されるファイル群は管理対象外にする
+AccountBook/bin
+AccountBook/obj
+AccountBookTests/bin
+AccountBookTests/obj
